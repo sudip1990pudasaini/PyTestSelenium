@@ -1,3 +1,7 @@
+import os
+from datetime import datetime
+
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -13,3 +17,7 @@ def init_driver(request):
 
     yield
     web_driver.close()
+
+
+def pytest_html_report_title(report):
+    report.title = "Swag Lab Automation Run"
